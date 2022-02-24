@@ -1,0 +1,127 @@
+// IMPORTS
+@import "mixins";
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/Montserrat/Montserrat-VariableFont.ttf");
+}
+
+// COLOURS & MODES
+$black: #000000;
+$white: #ffffff;
+
+$dark-level-0: #000000;
+$dark-level-1: #1a1a1a;
+$dark-level-2: #333333;
+
+$light-level-0: #ffffff;
+$light-level-1: #e6e6e6;
+$light-level-2: #cccccc;
+
+$dark-main: #0a6c76;
+$main: #14d8eb;
+$light-main: #8aebf5;
+
+.light-bg {
+  background-color: $light-level-2;
+  color: $black;
+
+  ::selection {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+.dark-bg {
+  background-color: $dark-level-0;
+  color: $white;
+
+  ::selection {
+    background-color: $white;
+    color: $black;
+  }
+}
+
+// GLOBAL STYLE
+
+/*
+font-family: "Parisienne", cursive;
+font-family: "Lobster", cursive;
+font-family: "Montserrat", sans-serif;
+*/
+
+html {
+  @extend %flex;
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+// 404 STYLE
+.bg-div {
+  @extend %flex;
+  width: 100%;
+  height: 100%;
+
+  .info-box {
+    @extend %flex, %rounded, %padding, %shadow-big;
+    width: 16rem;
+    height: 8rem;
+    background-color: $dark-level-1;
+
+    .main {
+      margin-right: 1rem;
+      font-size: 2rem;
+
+      h1 {
+        margin: 0;
+      }
+
+      i {
+        margin-left: 1rem;
+        font-size: 4rem;
+      }
+    }
+
+    .main,
+    .redirect {
+      @extend %flex;
+      width: 100%;
+    }
+
+    .redirect {
+      margin: 1rem;
+
+      p {
+        margin: 0;
+        text-align: center;
+      }
+
+      .link {
+        @extend %flex;
+        width: 100%;
+
+        a {
+          margin-left: 0.25rem;
+          text-decoration: none;
+          color: $main;
+          transition: all 150ms;
+        }
+
+        a:hover {
+          color: $light-main;
+          transition: all 150ms;
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVNESS
+$small: 600px; // 320 to 600  = mobile
+$medium: 900px; // 600 to 1200 = tablet
+$large: 1200px; // 1200 to inf = desktop
+$extra-large: 1900px; // 2K
+
+//@media only screen and (min-device-width: $large) {}
