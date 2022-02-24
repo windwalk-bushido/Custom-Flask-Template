@@ -30,6 +30,22 @@ $light-main: #8aebf5;
     background-color: $black;
     color: $white;
   }
+
+  .info-box {
+    background-color: $light-level-1;
+
+    .redirect {
+      .link {
+        a {
+          color: $dark-main;
+        }
+
+        a:hover {
+          color: $main;
+        }
+      }
+    }
+  }
 }
 
 .dark-bg {
@@ -39,6 +55,22 @@ $light-main: #8aebf5;
   ::selection {
     background-color: $white;
     color: $black;
+  }
+
+  .info-box {
+    background-color: $dark-level-1;
+
+    .redirect {
+      .link {
+        a {
+          color: $main;
+        }
+
+        a:hover {
+          color: $light-main;
+        }
+      }
+    }
   }
 }
 
@@ -63,13 +95,11 @@ html {
   @extend %flex;
   width: 100%;
   height: 100%;
-  color: $white;
 
   .info-box {
     @extend %flex, %rounded, %padding, %shadow-big;
     width: 16rem;
     height: 8rem;
-    background-color: $dark-level-1;
 
     .main {
       margin-right: 1rem;
@@ -106,12 +136,10 @@ html {
         a {
           margin-left: 0.25rem;
           text-decoration: none;
-          color: $main;
           transition: all 150ms;
         }
 
         a:hover {
-          color: $light-main;
           transition: all 150ms;
         }
       }
