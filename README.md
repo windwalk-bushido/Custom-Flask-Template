@@ -27,7 +27,9 @@ Starts with:
 > Note #2: This will install project in the current directory (from where you enter command bellow)
 
 ```sh
-git clone https://github.com/windwalk-bushido/Custom-Flask-Template.git ; cd Custom-Flask-Template ; bash init_project.sh
+git clone https://github.com/windwalk-bushido/Custom-Flask-Template.git
+cd Custom-Flask-Template
+bash init_project.sh
 ```
 
 ## Deployment on Heroku:
